@@ -379,7 +379,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Rob Rix";
 				TargetAttributes = {
 					57FCDE3C1BA280DC00130C48 = {
@@ -401,7 +401,7 @@
 					};
 					D454807C1A957361009D7229 = {
 						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 					};
 					D45480861A957362009D7229 = {
 						CreatedOnToolsVersion = 6.3;
@@ -924,6 +924,7 @@
 				PRODUCT_NAME = Result;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -948,6 +949,7 @@
 				PRODUCT_NAME = Result;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
