@@ -21,7 +21,8 @@ final class ResultTests: XCTestCase {
 		let resultSuccess = success.fanout(success)
 		if let (x, y) = resultSuccess.value {
 			XCTAssertTrue(x == "success" && y == "success")
-		} else {
+		}
+        else {
 			XCTFail()
 		}
 
@@ -223,7 +224,7 @@ let failure2 = Result<String, AnyError>.failure(error2)
 // MARK: - Helpers
 
 extension AnyError: Equatable {
-	public static func ==(lhs: AnyError, rhs: AnyError) -> Bool {
+	public static func == (lhs: AnyError, rhs: AnyError) -> Bool {
 		return lhs.error._code == rhs.error._code
 			&& lhs.error._domain == rhs.error._domain
 	}

@@ -9,7 +9,8 @@ public struct AnyError: Swift.Error {
 	public init(_ error: Swift.Error) {
 		if let anyError = error as? AnyError {
 			self = anyError
-		} else {
+		}
+        else {
 			self.error = error
 		}
 	}

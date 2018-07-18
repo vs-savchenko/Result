@@ -113,10 +113,11 @@ public extension Result where Error: ErrorConvertible {
 
 extension Result where Value: Equatable, Error: Equatable {
 	/// Returns `true` if `left` and `right` are both `Success`es and their values are equal, or if `left` and `right` are both `Failure`s and their errors are equal.
-	public static func ==(left: Result<Value, Error>, right: Result<Value, Error>) -> Bool {
+	public static func == (left: Result<Value, Error>, right: Result<Value, Error>) -> Bool {
 		if let left = left.value, let right = right.value {
 			return left == right
-		} else if let left = left.error, let right = right.error {
+		}
+        else if let left = left.error, let right = right.error {
 			return left == right
 		}
 		return false
@@ -136,12 +137,12 @@ extension Result where Value: Equatable, Error: Equatable {
 
 extension Result {
 	/// Returns the value of `left` if it is a `Success`, or `right` otherwise. Short-circuits.
-	public static func ??(left: Result<Value, Error>, right: @autoclosure () -> Value) -> Value {
+	public static func ?? (left: Result<Value, Error>, right: @autoclosure () -> Value) -> Value {
 		return left.recover(right())
 	}
 
 	/// Returns `left` if it is a `Success`es, or `right` otherwise. Short-circuits.
-	public static func ??(left: Result<Value, Error>, right: @autoclosure () -> Result<Value, Error>) -> Result<Value, Error> {
+	public static func ?? (left: Result<Value, Error>, right: @autoclosure () -> Result<Value, Error>) -> Result<Value, Error> {
 		return left.recover(with: right())
 	}
 }
